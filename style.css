@@ -1,25 +1,155 @@
+/* Body and global */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
     line-height: 1.6;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
+/* Hero Section */
+.hero {
+    padding: 50px 20px;
 }
 
-h1 {
-    margin-bottom: 5px;
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-h2 {
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
+/* Left: Info */
+.hero-text {
+    flex: 1;
+    min-width: 250px;
 }
 
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #d76ad9; /* subtle gold */
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* Right: Profile Photo */
+.profile-photo-container {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid #eecfef; /* match heading */
+    margin-left: 20px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sections */
 section {
-    margin-bottom: 30px;
+    margin: 40px 0;
+    padding: 25px 20px;
+    background: rgba(0,0,0,0.5); /* subtle dark */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    border-left: 4px solid #d76ad9; /* subtle accent */
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d76ad9;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #ed80db;
+}
+
+/* Skills */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    background: #d76ad9; /* muted gold badges */
+    padding: 5px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 20px;
+    color: #0f2027; /* dark text for contrast */
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+}
+
+/* Projects cards */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background: rgba(0,0,0,0.55);
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 250px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #d76ad9;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,215,0,0.5);
+}
+
+/* Links */
+a {
+    color: #d76ad9;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffee99;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-photo-container {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
 }
